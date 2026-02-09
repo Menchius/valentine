@@ -48,7 +48,8 @@
     }
 
     img {
-      max-width: 300px;
+      max-width: 80%;
+      max-height: 40vh;
       border-radius: 12px;
       margin-top: 20px;
     }
@@ -177,20 +178,21 @@
     noBtn.style.top = `${y}px`;
   });
 
-  // Final automatic sequence after YES
   function startFinalSequence() {
-    goToPage(5);
+  goToPage(5);
 
-    setTimeout(() => {
-      goToPage(6);
-    }, 5000);
+  setTimeout(() => {
+    goToPage(6);
+  }, 3500);
 
-    setTimeout(() => {
-      goToPage(7);
-    }, 7000);
-  }
+  setTimeout(() => {
+    goToPage(7);
+  }, 10000);
+}
+
 </script>
 
 </body>
 </html>
+
 
