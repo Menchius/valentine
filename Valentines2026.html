@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Important Questions 💖</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background: #ffe6eb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .page {
+      display: none;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .active {
+      display: block;
+    }
+
+    h1, h2 {
+      margin-bottom: 15px;
+    }
+
+    button {
+      padding: 12px 20px;
+      font-size: 18px;
+      margin: 6px;
+      cursor: pointer;
+      border-radius: 8px;
+      border: none;
+    }
+
+    .msg {
+      margin-top: 20px;
+      font-size: 18px;
+      min-height: 24px;
+    }
+
+    #no {
+      position: absolute;
+    }
+
+    img {
+      max-width: 300px;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+  <h1>How much do you love your boyfriend? 💕</h1>
+  <div>
+    <button onclick="loveAnswer(1)">1</button>
+    <button onclick="loveAnswer(2)">2</button>
+    <button onclick="loveAnswer(3)">3</button>
+    <button onclick="loveAnswer(4)">4</button>
+    <button onclick="loveAnswer(5)">5</button>
+    <button onclick="loveAnswer(6)">6</button>
+    <button onclick="loveAnswer(7)">7</button>
+    <button onclick="loveAnswer(8)">8</button>
+    <button onclick="loveAnswer(9)">9</button>
+    <button onclick="loveAnswer(10)">10</button>
+  </div>
+  <div class="msg" id="loveMsg"></div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+  <h1>How awesome is your boyfriend? 😌</h1>
+  <div>
+    <button onclick="awesomeAnswer(1)">1</button>
+    <button onclick="awesomeAnswer(2)">2</button>
+    <button onclick="awesomeAnswer(3)">3</button>
+    <button onclick="awesomeAnswer(4)">4</button>
+    <button onclick="awesomeAnswer(5)">5</button>
+    <button onclick="awesomeAnswer(6)">6</button>
+    <button onclick="awesomeAnswer(7)">7</button>
+    <button onclick="awesomeAnswer(8)">8</button>
+    <button onclick="awesomeAnswer(9)">9</button>
+    <button onclick="awesomeAnswer(10)">10</button>
+  </div>
+  <div class="msg" id="awesomeMsg"></div>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="page3">
+  <h2>Šitas ir taip buvo aišku lol 😏</h2>
+  <p>If you are ready for the most important question…</p>
+  <button onclick="goToPage(4)">Click here 💘</button>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page" id="page4">
+  <h1>Will you be my Valentine? 💖</h1>
+  <button onclick="goToPage(5)">Yes</button>
+  <button id="no">No</button>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page" id="page5">
+  <h1>YAYYYYY 💕🥰🎉</h1>
+  <p>Best decision ever 😌</p>
+  <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="cute kittens">
+</div>
+
+<script>
+  function goToPage(pageNumber) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(`page${pageNumber}`).classList.add('active');
+  }
+
+  function loveAnswer(number) {
+    const msg = document.getElementById("loveMsg");
+
+    if (number === 10) {
+      msg.textContent = "DAAAAAMN FOR REAL???? 😭😭😭 Veltui kitus mygtukus užprogramavau";
+    } else {
+      msg.textContent = "Correct 😌 You chose 10 out of 10 💕";
+    }
+
+    setTimeout(() => goToPage(2), 5500);
+  }
+
+  function awesomeAnswer(number) {
+  const msg = document.getElementById("awesomeMsg");
+
+  const responses = {
+    1: "EXCUSE ME??? 😭 Try again.",
+    2: "I feel violated. Try again.",
+    3: "Wow. Just wow. Try again.",
+    4: "This is slander. Try again.",
+    5: "MID????? 😤 Try again.",
+    6: "I expected better... Try again.",
+    7: "Still diabolical. Try again.",
+    8: "Close, but still very wrong 😌 Try again.",
+    9: "Broski... So close it hurts. Try again."
+  };
+
+  if (number === 10) {
+    msg.textContent = "Correct 😌 Obviously.";
+    setTimeout(() => goToPage(3), 4000);
+  } else {
+    msg.textContent = responses[number];
+  }
+}
+
+  // Moving NO button
+  const noBtn = document.getElementById("no");
+  noBtn.addEventListener("mouseover", () => {
+    const x = Math.random() * (window.innerWidth - 100);
+    const y = Math.random() * (window.innerHeight - 50);
+    noBtn.style.left = `${x}px`;
+    noBtn.style.top = `${y}px`;
+  });
+</script>
+
+</body>
+</html>
