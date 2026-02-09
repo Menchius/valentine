@@ -102,7 +102,7 @@
 <!-- PAGE 4 -->
 <div class="page" id="page4">
   <h1>Will you be my Valentine? 💖</h1>
-  <button onclick="goToPage(5)">Yes</button>
+  <button onclick="startFinalSequence()">Yes</button>
   <button id="no">No</button>
 </div>
 
@@ -111,6 +111,19 @@
   <h1>YAYYYYY 💕🥰🎉</h1>
   <p>Best decision ever 😌</p>
   <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="cute kittens">
+</div>
+
+<!-- PAGE 6 -->
+<div class="page" id="page6">
+  <h1>Thank you for making me the happiest man in the world 💖</h1>
+  <img src="mehappy.JPG" alt="me happy">
+</div>
+
+<!-- PAGE 7 -->
+<div class="page" id="page7">
+  <h1>Now it’s my turn to make you happy 💐</h1>
+  <p>Open the door 😉</p>
+  <img src="me.JPG" alt="me">
 </div>
 
 <script>
@@ -123,7 +136,8 @@
     const msg = document.getElementById("loveMsg");
 
     if (number === 10) {
-      msg.textContent = "DAAAAAMN FOR REAL???? 😭😭😭 Veltui kitus mygtukus užprogramavau";
+      msg.textContent =
+        "DAAAAAMN FOR REAL???? 😭😭😭 Veltui kitus mygtukus užprogramavau";
     } else {
       msg.textContent = "Correct 😌 You chose 10 out of 10 💕";
     }
@@ -132,27 +146,27 @@
   }
 
   function awesomeAnswer(number) {
-  const msg = document.getElementById("awesomeMsg");
+    const msg = document.getElementById("awesomeMsg");
 
-  const responses = {
-    1: "EXCUSE ME??? 😭 Try again.",
-    2: "I feel violated. Try again.",
-    3: "Wow. Just wow. Try again.",
-    4: "This is slander. Try again.",
-    5: "MID????? 😤 Try again.",
-    6: "I expected better... Try again.",
-    7: "Still diabolical. Try again.",
-    8: "Close, but still very wrong 😌 Try again.",
-    9: "Broski... So close it hurts. Try again."
-  };
+    const responses = {
+      1: "EXCUSE ME??? 😭 Try again.",
+      2: "I feel violated. Try again.",
+      3: "Wow. Just wow. Try again.",
+      4: "This is slander. Try again.",
+      5: "MID????? 😤 Try again.",
+      6: "I expected better... Try again.",
+      7: "Still diabolical. Try again.",
+      8: "Close, but still very wrong 😌 Try again.",
+      9: "Broski... So close it hurts. Try again."
+    };
 
-  if (number === 10) {
-    msg.textContent = "Correct 😌 Obviously.";
-    setTimeout(() => goToPage(3), 4000);
-  } else {
-    msg.textContent = responses[number];
+    if (number === 10) {
+      msg.textContent = "Correct 😌 Obviously.";
+      setTimeout(() => goToPage(3), 4000);
+    } else {
+      msg.textContent = responses[number];
+    }
   }
-}
 
   // Moving NO button
   const noBtn = document.getElementById("no");
@@ -162,6 +176,19 @@
     noBtn.style.left = `${x}px`;
     noBtn.style.top = `${y}px`;
   });
+
+  // Final automatic sequence after YES
+  function startFinalSequence() {
+    goToPage(5);
+
+    setTimeout(() => {
+      goToPage(6);
+    }, 3500);
+
+    setTimeout(() => {
+      goToPage(7);
+    }, 7000);
+  }
 </script>
 
 </body>
