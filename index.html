@@ -179,21 +179,26 @@
   });
 
   function startFinalSequence() {
+  // Page 5
   goToPage(5);
 
+  // After 4 seconds → page 6
   setTimeout(() => {
     goToPage(6);
-  }, 10000);
+  }, 4000);
 
+  // After 11 seconds total → page 7
   setTimeout(() => {
     goToPage(7);
-  }, 10000);
+  }, 11000);
 }
+
 
 </script>
 
 </body>
 </html>
+
 
 
 
