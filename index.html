@@ -134,17 +134,21 @@
   }
 
   function loveAnswer(number) {
-    const msg = document.getElementById("loveMsg");
-
-    if (number === 10) {
-      msg.textContent =
-        "DAAAAAMN FOR REAL???? 😭😭😭 Veltui kitus mygtukus užprogramavau";
-    } else {
-      msg.textContent = "Correct 😌 You chose 10 out of 10 💕";
-    }
-
-    setTimeout(() => goToPage(2), 5500);
+  const msg = document.getElementById("loveMsg");
+  
+  // Disable all buttons on this page immediately after a click
+  const buttons = document.querySelectorAll('#page1 button');
+  buttons.forEach(btn => btn.disabled = true);
+  
+  if (number === 10) {
+    msg.textContent = "DAAAAAMN FOR REAL???? 😭😭😭 Veltui kitus mygtukus užprogramavau";
+  } else {
+    msg.textContent = "Correct 😌 You chose 10 out of 10 💕";
   }
+
+  setTimeout(() => goToPage(2), 5500);
+}
+
 
   function awesomeAnswer(number) {
     const msg = document.getElementById("awesomeMsg");
@@ -198,6 +202,7 @@
 
 </body>
 </html>
+
 
 
 
